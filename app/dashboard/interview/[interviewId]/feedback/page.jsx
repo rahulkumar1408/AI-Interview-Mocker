@@ -15,6 +15,8 @@ import { useRouter } from "next/navigation";
 
 function Feedback({ params }) {
   const [feedbackList, setFeedbackList] = useState([]);
+  const [averageRating, setAverageRating] = useState(null);
+  const [sum,setSum]=useState(0);
   const router = useRouter();
   useEffect(() => {
     GetFeedback();
@@ -29,6 +31,26 @@ function Feedback({ params }) {
 
       console.log(result)
     setFeedbackList(result);
+
+    if (result && result.length > 0) {
+      // Log individual ratings
+      // result.forEach(item => console.log("Rating:", item.rating));
+  
+      // Convert ratings to numbers and sum them
+      const totalRating = result.reduce((sum, item) => {
+        const ratingValue = Number(item.rating); // Convert rating to number
+        return sum + (isNaN(ratingValue) ? 0 : ratingValue); // Add to sum, handle NaN
+      }, 0); // Start sum from 0
+  
+      const avgRating = totalRating / result.length; // Calculate average rating
+  
+      // console.log("Total Rating:", totalRating); // Log total rating
+      // console.log("Average Rating (before clamping):", avgRating); // Log average before clamping
+  
+      const normalizedAvgRating = Math.min(Math.max(avgRating, 0), 10); // Clamp between 0 and 10
+      setAverageRating(normalizedAvgRating.toFixed(1)); // Save the average rating (rounded to 1 decimal)
+    }
+  
   };
   return (
     <div className="p-10">
@@ -41,9 +63,12 @@ function Feedback({ params }) {
       <h2 className="text-3xl font-bold text-green-500">Congratulation!</h2>
       <h2 className="font-bold text-2xl">Here is your interview feedback</h2>
       
-      <h2 className="text-primary text-lg my-3">
-        Your overall interview rating: <strong>7/10</strong>
-      </h2>
+      {/* Show average rating */}
+      {averageRating !== null && (
+            <h2 className="text-primary text-lg my-3">
+              Your overall interview rating: <strong>{averageRating}/10</strong>
+            </h2>
+          )}
 
       <h2 className="text-sm text-gray-500">
         Find below interview question with correct answer, Your answer and
