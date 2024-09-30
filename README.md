@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Mock Interview Application
 
-## Getting Started
+## Project Description
+This Full Stack AI Mock Interview App allows users to participate in mock interviews powered by **Gemini AI** and receive real-time feedback based on their responses. The application is built using **Next.js**, **React**, **Drizzle ORM**, and **Clerk** for user authentication, providing an intuitive and seamless interview experience. 💻
 
-First, run the development server:
+## Deployed Link: 
+https://ai-interview-mocker-dun.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- **AI-powered mock interviews**: Generate interview questions using Gemini AI.
+- **Real-time feedback**: After each interview session, the app provides feedback based on the user's performance.
+- **User authentication**: Secure user accounts and session management with Clerk.
+- **Scalable architecture**: Built with Next.js for fast rendering and smooth navigation.
+- **ORM for data management**: Use Drizzle ORM to handle database operations efficiently.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+- **Frontend**: Next.js (React)
+- **Backend**: Next.js API routes
+- **AI/NLP**: Gemini AI for generating interview questions and processing responses
+- **Database**: Drizzle ORM for database operations
+- **Authentication**: Clerk for user management
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To run the project locally, follow these steps:
 
-## Learn More
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/rahulkumar1408/AI-Interview-Mocker.git
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Navigate to the project directory**:
+    ```bash
+    cd ai-mock-interview-app
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. **Set up environment variables**:
+   - Create a `.env.local` file in the root directory.
+   - Add the following environment variables:
+     ```env
+     GEMINI_AI_API_KEY=your-gemini-api-key
+     DATABASE_URL=your-database-url
+     ```
 
-## Deploy on Vercel
+5. **Run the development server**:
+    ```bash
+    npm run dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. **Open your browser** and navigate to `http://localhost:3000`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Usage
+
+1. **Sign up / Log in**: Users need to sign up or log in using Clerk for authentication.
+2. **Start a mock interview**: Fill the details of yours such as Role,Topics,Years of Experience and begin the interview session.
+3. **Answer questions**: Gemini AI will ask a series of questions. Respond verbally.
+4. **Receive feedback**: Once the session is complete, the app will analyze your answers and provide detailed feedback, helping you improve.
+
+## API Integration
+
+- **Gemini AI**: Used for generating interview questions and analyzing user responses.
+- **Drizzle ORM**: Manages interview data and user performance records.
+- **Clerk**: Handles user authentication, registration, and session management.
+
+## Deployment
+
+To deploy this app, you can use platforms like Vercel (recommended for Next.js apps):
+
+1. **Deploy on Vercel**:
+   - Sign in to [Vercel](https://vercel.com/) and link your GitHub repository.
+   - Configure environment variables for **Gemini AI**, **Drizzle ORM**, and **Clerk** in Vercel's dashboard.
+   - Deploy your app!
+
+## Contributing
+
+1. **Fork the repository**.
+2. **Create a new branch** for your feature:
+    ```bash
+    git checkout -b feature-branch
+    ```
+3. **Commit your changes**:
+    ```bash
+    git commit -m "Add new feature"
+    ```
+4. **Push to the branch**:
+    ```bash
+    git push origin feature-branch
+    ```
+5. **Open a pull request**.
+
+
+## Acknowledgements
+Special thanks to:
+- **Next.js** for the powerful full-stack framework.
+- **Gemini AI** for enabling AI-driven mock interviews.
+- **Clerk** for user authentication.
+- **Drizzle ORM** for managing our database interactions.
+
+---
+
+
