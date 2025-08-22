@@ -3,9 +3,6 @@
 ## Project Description
 This Full Stack AI Mock Interview App allows users to participate in mock interviews powered by **Gemini AI** and receive real-time feedback based on their responses. The application is built using **Next.js**, **React**, **Drizzle ORM**, and **Clerk** for user authentication, providing an intuitive and seamless interview experience. 💻
 
-## Deployed Link: 
-https://ai-interview-mocker-dun.vercel.app/
-
 ## Features
 - **AI-powered mock interviews**: Generate interview questions using Gemini AI.
 - **Real-time feedback**: After each interview session, the app provides feedback based on the user's performance.
